@@ -5,6 +5,4 @@ within this file have the following:
 
 `<email>,<password>,<ThreadID>`
 
-e.g.
-
-`tom@tmoses.co.uk,superSecure8,19381221`
+e.g. `tom@tmoses.co.uk,superSecure8,19381221`
