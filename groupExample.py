@@ -9,9 +9,6 @@ details =f.read()
 f.close()
 
 detailsList = details.strip().split(",")
-
-
-
 client = Client(detailsList[0], detailsList[1])
 
 
