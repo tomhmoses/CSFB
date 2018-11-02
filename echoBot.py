@@ -21,6 +21,4 @@ f.close()
 detailsList = details.strip().split(",")
 client = EchoBot(detailsList[0], detailsList[1])
 
-
-
 client.listen()
