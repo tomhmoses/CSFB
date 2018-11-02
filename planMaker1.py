@@ -13,12 +13,14 @@ client = Client(detailsList[0], detailsList[1])
 
 
 
-thread_id = '1829194537197296'
+thread_id = detailsList[2]
 thread_type = ThreadType.GROUP
+
+startingLocationString = "Starbucks ⇨ "
 
 #creates a plan object
 
-newPlan = Plan(1541235600,"test plan name", "tom's laptop")
+newPlan = Plan(1541235600,"08:45 meet", startingLocationString + "Some Lecture Theatre")
 
 
 # Will send the plan
