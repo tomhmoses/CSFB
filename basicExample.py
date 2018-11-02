@@ -1,9 +1,17 @@
 # -*- coding: UTF-8 -*-
 
-from fbchat import Client
-from fbchat.models import *
+#from fbchat import Client
+#from fbchat.models import *
 
-client = Client('<email>', '<password>')
+#gets details
+f=open("details.txt", "r")
+details =f.read()
+f.close()
+
+print details.strip().split(",")
+
+
+client = Client(details[0], details[1])
 
 print('Own id: {}'.format(client.uid))
 
