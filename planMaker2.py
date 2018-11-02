@@ -8,7 +8,7 @@ import time
 
 
 def postPlanToGroup(newPlan):
-    f=open("details.txt", "r")
+    f=open("facebookDetails.txt", "r")
     details =f.read()
     f.close()
 
