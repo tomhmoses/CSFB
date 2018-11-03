@@ -2,7 +2,7 @@
 
 The point of this is to automatically make a plan in a facebook groupchat before a lecture. This plan factors in walking time to the lecture location and wait time for everybody to meet.
 
-##if you want to get this to work
+## If you want to get this to work
 
 
 to get this to work you will need to make a file called details.txt
