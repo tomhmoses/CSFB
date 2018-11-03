@@ -23,6 +23,25 @@ def postPlanToGroup(newPlan):
     print "made plan"
     client.logout()
 
+def postTestMessage():
+    f=open("facebookDetails.txt", "r")
+    details =f.read()
+    f.close()
+
+    detailsList = details.strip().split(",")
+
+    client = Client(detailsList[0], detailsList[1])
+
+    print('Own id: {}'.format(client.uid))
+
+    client.send(Message(text='Bot started and ready to send a plan to: ' + str(detailsList[2])), thread_id=client.uid, thread_type=ThreadType.USER)
+
+    client.logout()
+
+
+
+
+
 
 def getWalkingTime(location):
     locationTimeArray = [["Physics West", 10],
@@ -94,6 +113,8 @@ def main():
     defaultLocationString = "Starbucks -> "
     defaultTitleString = " meet for: "
 
+    postTestMessage()
+
     while True:
         eventDetails = getNextEventDetails()
 
@@ -108,12 +129,13 @@ def main():
 
         newPlan = Plan(timestamp,titleString, locationString)
 
+        print " Next event: " + titleString
         waitUntilOneHourBeforeMeet(timeToMeet)
-        #postPlanToGroup(newPlan)
-        print "would have posted about " + titleString
+        postPlanToGroup(newPlan)
+        print " posted about " + titleString
         waitUntilNextAttempt(stringTimeToDatetime(eventDetails['start']))
-        #postPlanToGroup(newPlan)
-        print "would have posted about " + titleString
+        postPlanToGroup(newPlan)
+        print " posted about " + titleString
 
         waitUntilAfterEvent(stringTimeToDatetime(eventDetails['start']))
 
